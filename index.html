@@ -37,70 +37,7 @@
         <p>arival products here</p>
     </div>
     <div class="products">
-        <div class="product-card">
-            <img src="./img/product-1.webp" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./img/product-2.webp" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./img/product-3.webp" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./img/product-4.webp" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./img/product-5.jpg" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./img/product-6.webp" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./img/product-3.webp" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="./img/product-4.webp" alt="">
-            <h1>Nike Shoes Jordan</h1>
-            <div class="button-price">
-                <p>$55.54</p>
-                <button><i class="fa-solid fa-shopping-cart"></i></button>
-            </div>
-        </div>
+    
     </div>
 
     <footer class="footer">
@@ -148,67 +85,8 @@
     </footer>
 
 
-
-    <script type="module">
-        // window.location.reload()
-        import {app ,auth ,db} from "./firebase/initialize.mjs"
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"; 
-import {getStorage,ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js"; 
-import {    query,
-    collection,
-    getDocs,
-    where} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"; 
-const navbar = document.querySelector(".navbar")
-const logo_img = document.querySelector(".logo-img")
-
-const redirect = () => {
-window.location.href = './pages/profile/index.html'
-}
-
-
-const getData = async (user) => {
-    const q = query(collection(db, "users"), where("user", "==", user.uid));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-        const storage = getStorage();
-getDownloadURL(ref(storage, doc.data().email))
-  .then((url) => {
-    const buttons = document.querySelector(".buttons")
-    buttons.innerHTML = `<i class="fa-solid fa-shopping-cart"></i>
-    <i class="fa-solid fa-heart"></i>
-            <img onclick="redirect()" src=${url}>
-        `
-})
-.catch((error) => {
-  // Handle any errors
-});
-    });
-}
-
-
-
-onAuthStateChanged(auth, (user => {
-    if (user) {
-         getData(user)
-
-    } else {
-        console.log("SIng");
-    }
-}))
-
-window.addEventListener("scroll", (() => {
-    const scollY = window.scrollY;
-    if (scollY >= 150) {
-        navbar.classList.add("color")
-        logo_img.src = "../img/black-logo.png"
-    } else {
-        navbar.classList.remove("color")
-        logo_img.src = "../img/logo.png"
-    }
-}))
-window.redirect = redirect
-
-    </script>
 </body>
 
 </html>
+
+    <script type="module" src="./js/script.mjs"></script>

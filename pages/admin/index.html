@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="form-container">
+            <h1>Add Products</h1>
+            <div class="input-label image">
+                <label for="image"><i class="fa-solid fa-camera"></i></label>
+                <input type="file" id="image">
+            </div>
+            <div class="input-label">
+                <label for="name">Product Name</label>
+                <input type="text" id="name" placeholder="Enter Product Name">
+            </div>
+            <div class="input-label">
+                <label for="price">Price</label>
+                <input type="text" id="price" placeholder="Enter Price ">
+            </div>
+            <div class="input-label">
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="Enter Description">
+            </div>
+            <button onclick="addProduct()">Add Product</button>
+        </div>
+    </div>
+
+
+    <script type="module" src="./script.mjs"></script>
+</body>
+
+</html>

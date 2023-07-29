@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #080c13;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    width: 500px;
+    height: 550px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.388);
+}
+
+.form-container h1 {
+    color: #080c13;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.form-container .input-label {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.form-container .input-label input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    margin-top: 10px;
+    outline: none;
+}
+
+.form-container button {
+    padding: 15px 20px;
+    background-color: #080c13;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #080c13;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 20px;
+}
+
+.form-container button:hover {
+    background-color: #fff;
+    color: #080c13;
+}
+
+.form-container input[type="file"] {
+    border: 0;
+    display: none;
+}
+
+.form-container .input-label label[for="image"]  {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #080c13;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
